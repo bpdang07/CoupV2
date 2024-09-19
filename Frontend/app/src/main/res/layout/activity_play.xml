@@ -1,0 +1,603 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="0dp">
+
+    <LinearLayout
+        android:id="@+id/topBr"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+    </LinearLayout>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/centralGridArea"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:padding="1dp"
+        app:layout_constraintBottom_toTopOf="@id/bottomArea"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/topBr"
+        app:layout_constraintVertical_bias="0.0">
+
+
+<!--        layout for when turn-->
+        <ImageView
+            android:id="@+id/gameBoard"
+            android:layout_width="194dp"
+            android:layout_height="178dp"
+            android:src="@drawable/action"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHeight_percent=".3"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.377"
+            app:layout_constraintWidth_percent="0.6" />
+        <!--        layout for when waiting-->
+        <ImageView
+            android:id="@+id/gameBoard_wait"
+            android:layout_width="194dp"
+            android:layout_height="178dp"
+            android:src="@drawable/waiting"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHeight_percent=".3"
+            app:layout_constraintHorizontal_bias="0.507"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.37"
+            app:layout_constraintWidth_percent="0.6" />
+
+        <!--        layout for when dead-->
+        <ImageView
+            android:id="@+id/gameBoard_dead"
+            android:layout_width="194dp"
+            android:layout_height="178dp"
+            android:src="@drawable/wasted"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHeight_percent=".3"
+            app:layout_constraintHorizontal_bias="0.507"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.37"
+            app:layout_constraintWidth_percent="0.6" />
+
+        <!--        player icons-->
+        <ImageView
+            android:id="@+id/player1"
+            android:layout_width="45dp"
+            android:layout_height="88dp"
+            android:src="@drawable/cardbackhitp"
+            android:visibility="visible"
+            app:layout_constraintBottom_toTopOf="@+id/scrollViewMessages1"
+            app:layout_constraintEnd_toStartOf="@+id/guideline"
+            app:layout_constraintTop_toTopOf="@+id/guideline5" />
+
+
+        <ImageView
+            android:id="@+id/player2"
+            android:layout_width="45dp"
+            android:layout_height="88dp"
+            android:src="@drawable/cardbackhitp"
+            android:visibility="visible"
+            app:layout_constraintBottom_toTopOf="@+id/scrollViewMessages1"
+            app:layout_constraintStart_toStartOf="@+id/guideline2"
+            app:layout_constraintTop_toTopOf="@+id/guideline5"
+            app:layout_constraintVertical_bias="0.44" />
+
+        <ImageView
+            android:id="@+id/player3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:layout_constraintEnd_toStartOf="@+id/guideline"
+            app:layout_constraintStart_toStartOf="@+id/guideline2"
+            app:layout_constraintTop_toTopOf="@+id/guideline5"
+            app:srcCompat="@drawable/cardbackhitp" />
+<!--        yellow icons-->
+        <ImageView
+            android:id="@+id/yellowicon1"
+            android:layout_width="45dp"
+            android:layout_height="88dp"
+            android:src="@drawable/cardbackhit_2"
+            android:visibility="visible"
+            app:layout_constraintBottom_toTopOf="@+id/guideline5"
+            app:layout_constraintStart_toStartOf="@+id/guideline7"
+            app:layout_constraintTop_toTopOf="@+id/guideline3"
+            app:layout_constraintVertical_bias="0.805" />
+
+        <ImageView
+            android:id="@+id/yellowicon2"
+            android:layout_width="45dp"
+            android:layout_height="88dp"
+            android:src="@drawable/cardbackhit_2"
+            android:visibility="visible"
+            app:layout_constraintBottom_toTopOf="@+id/guideline5"
+            app:layout_constraintStart_toStartOf="@+id/guideline7"
+            app:layout_constraintTop_toTopOf="@+id/guideline3"
+            app:layout_constraintVertical_bias="0.172" />
+
+        <ImageView
+            android:id="@+id/yellowicon3"
+            android:layout_width="45dp"
+            android:layout_height="88dp"
+            android:src="@drawable/cardbackhit_2"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/guideline5"
+            app:layout_constraintStart_toStartOf="@+id/guideline7"
+            app:layout_constraintTop_toTopOf="@+id/guideline3"
+            app:layout_constraintVertical_bias="0.487" />
+
+            <!--blue icons-->
+        <ImageView
+            android:id="@+id/blueIcon1"
+            android:layout_width="45dp"
+            android:layout_height="88dp"
+            android:src="@drawable/cardbackhit_2"
+            android:visibility="visible"
+            app:layout_constraintBottom_toTopOf="@+id/guideline5"
+            app:layout_constraintEnd_toStartOf="@+id/guideline6"
+            app:layout_constraintTop_toTopOf="@+id/guideline3"
+            app:layout_constraintVertical_bias="0.172" />
+
+        <ImageView
+            android:id="@+id/blueIcon2"
+            android:layout_width="45dp"
+            android:layout_height="88dp"
+            android:src="@drawable/cardbackhit_2"
+            android:visibility="visible"
+            app:layout_constraintBottom_toTopOf="@+id/guideline5"
+            app:layout_constraintEnd_toStartOf="@+id/guideline6"
+            app:layout_constraintTop_toTopOf="@+id/guideline3"
+            app:layout_constraintVertical_bias="0.805" />
+
+
+            <ImageView
+                android:id="@+id/blueIcon3"
+                android:layout_width="45dp"
+                android:layout_height="88dp"
+                android:src="@drawable/cardbackhit_2"
+                android:visibility="gone"
+                app:layout_constraintBottom_toTopOf="@+id/guideline5"
+                app:layout_constraintEnd_toStartOf="@+id/guideline6"
+                app:layout_constraintTop_toTopOf="@+id/guideline3"
+                app:layout_constraintVertical_bias="0.487" />
+<!--            red icons-->
+            <ImageView
+                android:id="@+id/redIcon1"
+                android:layout_width="45dp"
+                android:layout_height="88dp"
+                android:src="@drawable/cardbackhit_2"
+                android:visibility="visible"
+                app:layout_constraintBottom_toTopOf="@+id/guideline3"
+                app:layout_constraintEnd_toStartOf="@+id/guideline" />
+
+            <ImageView
+                android:id="@+id/redIcon2"
+                android:layout_width="45dp"
+                android:layout_height="88dp"
+                android:src="@drawable/cardbackhit_2"
+                android:visibility="visible"
+                app:layout_constraintBottom_toTopOf="@+id/guideline3"
+                app:layout_constraintStart_toStartOf="@+id/guideline2" />
+            <ImageView
+                android:id="@+id/redIcon3"
+                android:layout_width="45dp"
+                android:layout_height="88dp"
+                android:src="@drawable/cardbackhit_2"
+                android:visibility="gone"
+                app:layout_constraintBottom_toTopOf="@+id/guideline3"
+                app:layout_constraintEnd_toStartOf="@+id/oval3"
+                app:layout_constraintHorizontal_bias="0.435"
+                app:layout_constraintStart_toStartOf="@+id/guideline2" />
+
+            <!--person icons-->
+        <ImageView
+            android:id="@+id/person3"
+            android:layout_width="53dp"
+            android:layout_height="88dp"
+            android:src="@drawable/person"
+            app:layout_constraintBottom_toTopOf="@+id/guideline3"
+            app:layout_constraintEnd_toStartOf="@+id/guideline2"
+            app:layout_constraintHorizontal_bias="0.9"
+            app:layout_constraintStart_toStartOf="@+id/guideline7" />
+
+        <ImageView
+            android:id="@+id/person4"
+            android:layout_width="53dp"
+            android:layout_height="88dp"
+            android:src="@drawable/person"
+            app:layout_constraintBottom_toTopOf="@+id/blueIcon1"
+            app:layout_constraintEnd_toStartOf="@+id/guideline6" />
+
+
+        <ImageView
+            android:id="@+id/person1"
+            android:layout_width="53dp"
+            android:layout_height="88dp"
+            android:src="@drawable/person"
+            app:layout_constraintEnd_toStartOf="@+id/guideline6"
+            app:layout_constraintHorizontal_bias="0.1"
+            app:layout_constraintStart_toStartOf="@+id/guideline"
+            app:layout_constraintTop_toTopOf="@+id/guideline5" />
+
+        <ImageView
+                android:id="@+id/person2"
+                android:layout_width="53dp"
+                android:layout_height="88dp"
+                android:src="@drawable/person"
+                app:layout_constraintStart_toStartOf="@+id/guideline7"
+                app:layout_constraintTop_toBottomOf="@+id/yellowicon1" />
+
+        <!--  coin ovals-->
+        <ImageView
+            android:id="@+id/oval3"
+            android:layout_width="53dp"
+            android:layout_height="88dp"
+            android:src="@drawable/greyoval"
+            app:layout_constraintBottom_toTopOf="@+id/guideline3"
+            app:layout_constraintEnd_toStartOf="@+id/guideline6"
+            app:layout_constraintHorizontal_bias="0.1"
+            app:layout_constraintStart_toStartOf="@+id/guideline" />
+
+        <TextView
+            android:id="@+id/oval3Text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textColor="#000000"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="@+id/oval3"
+            app:layout_constraintEnd_toEndOf="@+id/oval3"
+            app:layout_constraintStart_toStartOf="@+id/oval3"
+            app:layout_constraintTop_toTopOf="@+id/oval3" />
+
+
+        <ImageView
+            android:id="@+id/oval4"
+            android:layout_width="53dp"
+            android:layout_height="85dp"
+            android:src="@drawable/greyoval"
+            app:layout_constraintEnd_toStartOf="@+id/guideline6"
+            app:layout_constraintTop_toBottomOf="@+id/blueIcon2" />
+
+        <TextView
+            android:id="@+id/oval4Text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textColor="#000000"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="@+id/oval4"
+            app:layout_constraintEnd_toEndOf="@+id/oval4"
+            app:layout_constraintStart_toStartOf="@+id/oval4"
+            app:layout_constraintTop_toTopOf="@+id/oval4" />
+
+        <ImageView
+            android:id="@+id/oval2"
+            android:layout_width="53dp"
+            android:layout_height="85dp"
+            android:src="@drawable/greyoval"
+            app:layout_constraintBottom_toTopOf="@+id/yellowicon2"
+            app:layout_constraintStart_toStartOf="@+id/guideline7" />
+
+        <TextView
+            android:id="@+id/oval2Text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textColor="#000000"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="@+id/oval2"
+            app:layout_constraintEnd_toEndOf="@+id/oval2"
+            app:layout_constraintStart_toStartOf="@+id/oval2"
+            app:layout_constraintTop_toTopOf="@+id/oval2" />
+
+
+        <ImageView
+            android:id="@+id/oval1"
+            android:layout_width="53dp"
+            android:layout_height="88dp"
+            android:src="@drawable/greyoval"
+            app:layout_constraintBottom_toTopOf="@+id/scrollViewMessages1"
+            app:layout_constraintEnd_toStartOf="@+id/guideline2"
+            app:layout_constraintHorizontal_bias="0.83"
+            app:layout_constraintStart_toStartOf="@+id/guideline7"
+            app:layout_constraintTop_toTopOf="@+id/guideline5" />
+
+        <TextView
+            android:id="@+id/oval1Text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textColor="#000000"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="@+id/oval1"
+            app:layout_constraintEnd_toEndOf="@+id/oval1"
+            app:layout_constraintStart_toStartOf="@+id/oval1"
+            app:layout_constraintTop_toTopOf="@+id/oval1" />
+
+<!--guidelines-->
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.64" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.36" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.23" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="417dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.98" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.02" />
+
+
+            <!--upper bar stuff-->
+        <ImageView
+            android:id="@+id/timericon"
+            android:layout_width="272dp"
+            android:layout_height="53dp"
+            android:src="@drawable/timericon"
+            app:layout_constraintEnd_toEndOf="parent"
+
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+        <TextView
+            android:id="@+id/timerText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/alfa_slab_one"
+            android:text="Current Player:"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="@+id/timericon"
+            app:layout_constraintEnd_toEndOf="@+id/timericon"
+            app:layout_constraintStart_toStartOf="@+id/timericon"
+            app:layout_constraintTop_toTopOf="@+id/timericon" />
+
+
+<!--        contest mode icons-->
+        <ImageView
+            android:id="@+id/BIGBLOCK"
+            android:layout_width="227dp"
+            android:layout_height="217dp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/guideline6"
+            app:layout_constraintStart_toStartOf="@+id/guideline7"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.367"
+            app:srcCompat="@drawable/contestblock" />
+
+        <ImageView
+            android:id="@+id/smallwhite1"
+            android:layout_width="95dp"
+            android:layout_height="91dp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.337"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.324"
+            app:srcCompat="@drawable/blockwidgets" />
+
+
+        <ImageView
+            android:id="@+id/smallwhite2"
+            android:layout_width="95dp"
+            android:layout_height="91dp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/guideline6"
+            app:layout_constraintHorizontal_bias="0.674"
+            app:layout_constraintStart_toStartOf="@+id/yellowicon2"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.324"
+            app:srcCompat="@drawable/bluffwidget" />
+
+
+        <ImageView
+            android:id="@+id/longwhite"
+            android:layout_width="183dp"
+            android:layout_height="71dp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/imageView"
+            app:layout_constraintEnd_toStartOf="@+id/guideline6"
+            app:layout_constraintHorizontal_bias="0.504"
+            app:layout_constraintStart_toStartOf="@+id/guideline7"
+            app:layout_constraintTop_toBottomOf="@+id/timericon"
+            app:layout_constraintVertical_bias="0.625"
+            app:srcCompat="@drawable/passwidget" />
+
+
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="384dp"
+            android:layout_height="207dp"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/guideline5"
+            app:layout_constraintVertical_bias="0.94"
+            app:srcCompat="@drawable/chatbox" />
+
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="370dp"
+            android:layout_height="48dp"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView"
+            app:layout_constraintEnd_toStartOf="@+id/guideline6"
+            app:layout_constraintHorizontal_bias="0.521"
+            app:layout_constraintStart_toStartOf="@+id/guideline7"
+            app:srcCompat="@drawable/whitetextbox" />
+        <ScrollView
+            android:id="@+id/scrollViewMessages1"
+            android:layout_width="380dp"
+            android:layout_height="170dp"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/imageView"
+            app:layout_constraintVertical_bias="0.0">
+
+            <LinearLayout
+                android:id="@+id/layoutMessages1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <!-- Messages will be added here dynamically -->
+            </LinearLayout>
+        </ScrollView>
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Click here to enter chat"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView4"
+            app:layout_constraintEnd_toEndOf="@+id/imageView4"
+            app:layout_constraintStart_toStartOf="@+id/imageView4"
+            app:layout_constraintTop_toTopOf="@+id/imageView"
+            app:layout_constraintVertical_bias="0.93" />
+
+        <ImageButton
+            android:id="@+id/exchangeView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/imageView"
+            app:layout_constraintEnd_toStartOf="@+id/guideline6"
+            app:layout_constraintStart_toStartOf="@+id/guideline7"
+            app:layout_constraintTop_toBottomOf="@+id/timerText"
+            app:srcCompat="@drawable/deck" />
+
+        <!--        exchange mode-->
+<!--        <CheckBox-->
+<!--            android:id="@+id/radioButton"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:fontFamily="@font/alfa_slab_one"-->
+<!--            android:text="RadioButton"-->
+<!--            android:visibility="gone"-->
+<!--            app:layout_constraintBottom_toTopOf="@+id/imageView"-->
+<!--            app:layout_constraintEnd_toStartOf="@+id/blueIcon2"-->
+<!--            app:layout_constraintHorizontal_bias="0.588"-->
+<!--            app:layout_constraintStart_toStartOf="@+id/yellowicon1"-->
+<!--            app:layout_constraintTop_toTopOf="@+id/timericon"-->
+<!--            app:layout_constraintVertical_bias="0.747" />-->
+
+<!--        <CheckBox-->
+<!--            android:id="@+id/radioButton1"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:fontFamily="@font/alfa_slab_one"-->
+<!--            android:text="RadioButton"-->
+<!--            android:visibility="gone"-->
+<!--            app:layout_constraintBottom_toTopOf="@+id/imageView"-->
+<!--            app:layout_constraintEnd_toStartOf="@+id/blueIcon2"-->
+<!--            app:layout_constraintHorizontal_bias="0.588"-->
+<!--            app:layout_constraintStart_toStartOf="@+id/guideline7"-->
+<!--            app:layout_constraintTop_toTopOf="@+id/timericon"-->
+<!--            app:layout_constraintVertical_bias="0.504" />-->
+
+<!--        <CheckBox-->
+<!--            android:id="@+id/radioButton2"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:fontFamily="@font/alfa_slab_one"-->
+<!--            android:text="RadioButton"-->
+<!--            android:visibility="gone"-->
+<!--            app:layout_constraintBottom_toTopOf="@+id/imageView"-->
+<!--            app:layout_constraintEnd_toStartOf="@+id/blueIcon1"-->
+<!--            app:layout_constraintHorizontal_bias="0.593"-->
+<!--            app:layout_constraintStart_toStartOf="@+id/yellowicon2"-->
+<!--            app:layout_constraintTop_toTopOf="@+id/timericon"-->
+<!--            app:layout_constraintVertical_bias="0.623" />-->
+
+<!--        <CheckBox-->
+<!--            android:id="@+id/radioButton3"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:fontFamily="@font/alfa_slab_one"-->
+<!--            android:text="RadioButton"-->
+<!--            android:visibility="gone"-->
+<!--            app:layout_constraintBottom_toTopOf="@+id/imageView"-->
+<!--            app:layout_constraintEnd_toStartOf="@+id/blueIcon1"-->
+<!--            app:layout_constraintHorizontal_bias="0.593"-->
+<!--            app:layout_constraintStart_toStartOf="@+id/yellowicon2"-->
+<!--            app:layout_constraintTop_toBottomOf="@+id/timericon"-->
+<!--            app:layout_constraintVertical_bias="0.293" />-->
+
+<!--        <Button-->
+<!--            android:id="@+id/button5"-->
+<!--            android:visibility="gone"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="Send"-->
+<!--            app:layout_constraintBottom_toTopOf="@+id/guideline5"-->
+<!--            app:layout_constraintEnd_toStartOf="@+id/guideline6"-->
+<!--            app:layout_constraintStart_toStartOf="@+id/guideline7"-->
+<!--            app:layout_constraintTop_toTopOf="@+id/guideline3"-->
+<!--            app:layout_constraintVertical_bias="0.85" />-->
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <LinearLayout
+        android:id="@+id/bottomArea"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+        <!-- Bottom elements go here -->
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
