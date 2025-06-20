@@ -34,5 +34,8 @@ This is a YouTube video for our final presentation for class.
 - Know how to run the app in many spaces.
 
 
+![alt-text](https://github.com/bpdang07/CoupV2/blob/b6f3aa65c481a96afced04f6f122ab75510a6c2d/Frontend/app/src/main/res/drawable/captain1.pnghttps://github.com/bpdang07/CoupV2/blob/b6f3aa65c481a96afced04f6f122ab75510a6c2d/Frontend/app/src/main/res/drawable/captain1.png)
+
+
 
 
