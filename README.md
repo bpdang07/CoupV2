@@ -2,13 +2,17 @@
 
 ## Introduction
 
-MK1_8 is the name of my team. This project is the work from a whole semester, as our team develops this game. I hope you take a look, and perhaps you will enjoy the game as well.
+![image](https://github.com/user-attachments/assets/aac5a712-b94b-41b1-ac04-0a7c3dbb9b30)
+
+his project is the work from a whole semester, as our team develops this game. I hope you take a look, and perhaps you will enjoy the game as well.
 
 For this game to start, you need to be able to run the frontend and backend actively. But it is best to keep running through a CI/CD pipeline. It is not currently set up on GitHub as this was moved over from GitLab. There is a demonstration video here if you want to see it in action
 
 https://www.youtube.com/watch?si=fdXRK55HRhXOuZFb&v=nfro94SzJfE&feature=youtu.be
 
 This is a YouTube video for our final presentation for class.
+
+![image](https://github.com/user-attachments/assets/9c10add3-fe76-4c56-9139-0508cbca63f7)
 
 ## Prerequistes
 - Android Studio
@@ -34,7 +38,8 @@ This is a YouTube video for our final presentation for class.
 - Know how to run the app in many spaces.
 
 
-![alt-text](https://github.com/bpdang07/CoupV2/blob/b6f3aa65c481a96afced04f6f122ab75510a6c2d/Frontend/app/src/main/res/drawable/captain1.pnghttps://github.com/bpdang07/CoupV2/blob/b6f3aa65c481a96afced04f6f122ab75510a6c2d/Frontend/app/src/main/res/drawable/captain1.png)
+![image](https://github.com/user-attachments/assets/8483340e-431c-4511-ab75-974ce73ea85b)
+
 
 
 
